@@ -1,0 +1,113 @@
+<HTML>
+    <head>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+        <title>IC2140's Assignment 1</title>
+    </head>
+    <body style="background-image: url('https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/v936-background-adj-08.jpg?w=800&dpr=1&fit=default&crop=default&q=65&vib=3&con=3&usm=15&bg=F4F4F3&ixlib=js-2.2.1&s=eb5816bfb1a2e622f0fe22c39376e217');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;">
+        <h1 >Inventory list</h1>
+  
+    <table>
+        <thead>
+            <tr>
+                <th scope="col">Inventory No.</th>
+                <th scope="col">Location</th>
+                <th scope="col">End User</th>
+                <th scope="col">Description</th>
+                <th scope="col">Brand</th>
+                <th scope="col">Unit Price</th>
+                <th scope="col">Acq. Date</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for item in entries %}
+        <tr>
+            <td>{{ item.inv_no }}</td>
+            <td>{{ item.loc }}</td>
+            <td>{{ item.user }}</td>
+            <td>{{ item.des}}</td>
+            <td>{{ item.brand }}</td>
+            <td>{{ item.price}}</td>
+            <td>{{ item.date_purchase}}</td>
+            <td>{{ item.active}}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+        </table>
+    </br>
+        <table>
+        <thead>
+            <tr>
+                <th scope="col">Inventory No.</th>
+                <th scope="col">Location</th>
+                <th scope="col">End User</th>
+                <th scope="col">Description</th>
+                <th scope="col">Brand</th>
+                <th scope="col">Unit Price</th>
+                <th scope="col">Acq. Date</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for item in price %}
+        <tr>
+            <td>{{ item.inv_no }}</td>
+            <td>{{ item.loc }}</td>
+            <td>{{ item.user }}</td>
+            <td>{{ item.des}}</td>
+            <td>{{ item.brand }}</td>
+            <td>{{ item.price}}</td>
+            <td>{{ item.date_purchase}}</td>
+            <td>{{ item.active}}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+        </table>
+    </br>
+        <table>
+            <th scope="col">Inventory No.</th>
+            <th scope="col">Location</th>
+            <th scope="col">End User</th>
+            <th scope="col">Description</th>
+            <th scope="col">Brand</th>
+            <th scope="col">Unit Price</th>
+            <th scope="col">Acq. Date</th>
+            </tr>
+            {% for item in date %}
+            <tr>
+                <td>{{ item.inv_no }}</td>
+                <td>{{ item.loc }}</td>
+                <td>{{ item.user }}</td>
+                <td>{{ item.des}}</td>
+                <td>{{ item.brand }}</td>
+                <td>{{ item.price}}</td>
+                <td>{{ item.date_purchase}}</td>
+                <td>{{ item.active}}</td>
+            </tr>
+            {% endfor %}
+            </table>
+        </br>
+        <table>
+            <th scope="col">User</th>
+            <th scope="col">Total</th>
+            {% for item in ownerTotal %}
+            <tr>
+                <td>{{item.user}}</td>
+                <td>{{ item.total}}</td>
+            </tr>
+            {% endfor %}
+            </table>
+        </br>
+            <table>
+                <th scope="col">Location</th>
+                <th scope="col">Total</th>
+                {% for item in locTotal %}
+                <tr>
+                    <td>{{item.loc}}</td>
+                    <td>{{ item.total}}</td>
+                </tr>
+                {% endfor %}
+            </table>
+    </body>
+</HTML>
