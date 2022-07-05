@@ -3,7 +3,7 @@ from django.template import context
 from .models import Entry
 from .forms import EntryForm
 from django.shortcuts import render, redirect
-
+#test
 # Create your views here.
 def index(request):
     return render(request, 'blog/index.html')
